@@ -1,3 +1,12 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Wiwek2";
+  src: url("./assets/font/WIWEK2.woff2");
+}
+
+* {
+  font-family: "Wiwek2" !important;
+}
