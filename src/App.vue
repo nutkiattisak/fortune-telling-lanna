@@ -1,14 +1,14 @@
-<script setup lang="ts">
-import Spinner from './components/Spinner.vue';
-</script>
-
 <template>
-  <div>
-    <Spinner />
-  </div>
- 
+  <WheelComponent />
 </template>
 
-<style scoped>
+<script lang="ts">
+import { defineComponent } from "vue"
+import WheelComponent from "./components/WheelComponent.vue"
 
-</style>
+export default defineComponent({
+  components: {
+    WheelComponent,
+  },
+})
+</script>
