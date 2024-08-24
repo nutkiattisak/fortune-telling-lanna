@@ -69,7 +69,7 @@
 </template>
 
 <script setup lang="ts">
-import { ref, computed, Ref, watch } from "vue"
+import { ref, computed, Ref } from "vue"
 import data from "../data/data.json"
 import { Item } from "../types/item"
 
@@ -145,8 +145,4 @@ const spinWheel = () => {
     isSpinning.value = false
   }, 1000)
 }
-
-watch(gender, (newGender) => {
-  rotation.value = newGender === "female" ? 16 : -16
-})
 </script>
