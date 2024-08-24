@@ -70,10 +70,10 @@
 
 <script setup lang="ts">
 import { ref, computed, Ref, watch } from "vue"
-import data from "@/data/data.json"
-import Item from "@/types/Item"
+import data from "../data/data.json"
+import { Item } from "../types/item"
 
-const items: Ref<Item[]> = ref(data)
+const items = ref<Item[]>(data)
 const rotation: Ref<number> = ref(-16)
 const selectedItem: Ref<Item | null> = ref(null)
 const isSpinning: Ref<boolean> = ref(false)
