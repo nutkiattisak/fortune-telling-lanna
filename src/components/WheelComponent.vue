@@ -18,7 +18,7 @@
             class="absolute flex flex-row top-3"
             :style="getSpanStyle(index)"
           >
-            {{ item }}
+            {{ item.id }}
           </span>
         </div>
       </div>
@@ -45,28 +45,19 @@
       class="mt-4 text-2xl font-bold text-center text-white"
       aria-live="polite"
     >
-      Result: {{ selectedItem }}
+      <p>ตกที่{{ selectedItem.name }}</p>
+      <p>{{ selectedItem.description }}</p>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref, computed, onMounted, onUnmounted } from "vue"
+import data from "@/data/data.json"
 
-const items = ref([
-  "๑",
-  "๒",
-  "๓",
-  "๔",
-  "๕",
-  "๖",
-  "๗",
-  "๘",
-  "๙",
-  "๑๐",
-  "๑๑",
-  "๑๒",
-])
+console.log(data)
+
+const items = ref(data)
 const rotation = ref(0)
 const selectedItem = ref(null)
 const isSpinning = ref(false)
@@ -109,16 +100,12 @@ const spinButtonStyle = computed(() => ({
 
 const getItemStyle = (index) => ({
   transform: `rotate(${
-    // 90
     (index * 360) / items.value.length + 360 / items.value.length / 2
   }deg)`,
 })
 
 const getSpanStyle = (index) => ({
-  transform: `translate(-50%, -50%) rotate(${
-    180
-    // -(index * 360) / items.value.length - 360 / items.value.length / 2
-  }deg)`,
+  transform: `translate(-50%, -50%) rotate(180deg)`,
 })
 
 const spinWheel = () => {
