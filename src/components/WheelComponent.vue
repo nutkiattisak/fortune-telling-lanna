@@ -83,18 +83,18 @@ const gender: Ref<string> = ref("male")
 
 const wheelStyle = computed(() => {
   const colors = [
-    "#FF6B6B",
-    "#4ECDC4",
-    "#45B7D1",
-    "#F7DC6F",
-    "#B39DDB",
-    "#FF8A65",
-    "#A5D6A7",
-    "#FFD54F",
-    "#FF5370",
-    "#64B5F6",
-    "#4DB6AC",
-    "#9575CD",
+    "#ed1e24",
+    "#dc088c",
+    "#9d248f",
+    "#6d2c91",
+    "#3853a4",
+    "#036836",
+    "#01a04d",
+    "#6abd45",
+    "#f0ea0e",
+    "#fbac18",
+    "#f47720",
+    "#ef4a24",
   ]
   const gradientStops = colors
     .map((color, index) => {
