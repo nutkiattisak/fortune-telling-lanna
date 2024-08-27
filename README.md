@@ -19,9 +19,9 @@
 
 1. Clone the repository: `git clone https://github.com/nutkiattisak/fortune-telling-lanna.git`
 2. Navigate to the project directory: `fortune-telling-lanna`
-3. Install dependencies: `pnpm install`
+3. Install dependencies: `bun install`
 
 ## Usage
 
-1. Start the development server: `pnpm run dev`
+1. Start the development server: `bun run dev`
 2. Access the app at: http://localhost:5173
