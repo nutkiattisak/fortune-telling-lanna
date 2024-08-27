@@ -49,8 +49,16 @@
         class="absolute z-10 transform -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
       >
         <button
-          @click="spinWheel"
+          v-if="selectedItem"
+          @click="resetWheel"
           :disabled="isSpinning"
+          class="flex items-center justify-center w-20 h-20 font-semibold text-black bg-white rounded-full hover:bg-purple-100 focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50"
+        >
+          รีเซ็ต
+        </button>
+        <button
+          v-else
+          @click="spinWheel"
           class="flex items-center justify-center w-20 h-20 font-semibold text-black bg-white rounded-full hover:bg-purple-100 focus:ring-2 focus:ring-purple-600 focus:ring-opacity-50"
         >
           หมุน
@@ -116,6 +124,14 @@ const getItemStyle = (index: number) => ({
     (index * 360) / items.value.length + 360 / items.value.length / 2
   }deg)`,
 })
+
+const resetWheel = () => {
+  selectedItem.value = null
+  isSpinning.value = false
+  age.value = 1
+  gender.value = "male"
+  rotation.value = -16
+}
 
 const spinWheel = () => {
   if (age.value === null || age.value <= 0) {
